@@ -3,7 +3,7 @@ import bcrypt from "bcryptjs";
 import {createAccessToken} from "../libs/jwt.js";
 
 export const register = async (req, res) => {
-    const {email, password, username} = req.body;
+    const {email, password, username, phone} = req.body;
 
     try {
 
@@ -13,6 +13,7 @@ export const register = async (req, res) => {
             username,
             email,
             password: passwordHash,
+            phone,
         });
 
        const userSaved = await newUser.save();
@@ -74,6 +75,6 @@ export const profile = async(req, res) =>{
         email: userFound.email,
         createdAt: userFound.createdAt,
         updateAt: userFound.updateAt,
-    })
-    res.send('profile');
+    });
+    
 }; 

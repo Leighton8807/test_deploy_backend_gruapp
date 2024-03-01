@@ -5,8 +5,6 @@ const mongoURI = 'mongodb+srv://gruapp_database:NofbfBbgoUdFqAuC@gruappdata.x2nv
 export const connectDB = async () => {
     try {
         await mongoose.connect(mongoURI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
             ssl: true,
             
         });
@@ -19,7 +17,7 @@ export const connectDB = async () => {
   
 //NofbfBbgoUdFqAuC
 
-
+//conexion a base de datos de forma local
 // export const connectDB = async () => {
 //     try{
 //         await mongoose.connect('mongodb://localhost/fullstackdb');
@@ -27,4 +25,4 @@ export const connectDB = async () => {
 //     }catch (error){
 //         console.log(error);
 //     }
-// }
+// }  
